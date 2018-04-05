@@ -1,19 +1,31 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
 import './App.css';
+import Ideas from './Ideas';
 
 class App extends Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+      ideas: []
+    }
+  }
+
+  componentDidMount(){
+    fetch('http://localhost:3001/api/ideas')
+    .then(resp => resp.json())
+    .then(ideas => this.setState({ideas}))
+  }
+
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Virtual brainstorming session for your business</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div>
+          <Ideas ideas={this.state.ideas} />
+        </div>
       </div>
+
     );
   }
 }
