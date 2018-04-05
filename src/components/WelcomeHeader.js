@@ -1,4 +1,6 @@
 import React from 'react';
+import '../containers/App.css';
+import logo from '../logo.svg';
 
 const WelcomeHeader = () => (
   <div className="App">
@@ -11,6 +13,7 @@ const WelcomeHeader = () => (
     <p className="App-topic">
       <strong>Topic:</strong> San Diego Comic-Con 2018
     </p>
+  </div>
 );
 
 export default WelcomeHeader;
