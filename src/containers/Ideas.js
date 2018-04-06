@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import IdeasCard from '../components/IdeaCard';
+import IdeaCard from '../components/IdeaCard';
 import IdeaForm from './IdeaForm';
 import { getIdeas } from '../actions/ideas';
 import './IdeaCard.css';
