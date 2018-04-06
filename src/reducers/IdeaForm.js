@@ -1,5 +1,5 @@
 const initialState = {
-  category_id: null,
+  category_id: '',
   name: '',
   content: '',
   author: '',
