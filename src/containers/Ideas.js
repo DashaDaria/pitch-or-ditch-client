@@ -17,6 +17,7 @@ class Ideas extends Component {
       <div className="IdeaCard">
         <h1>Ideas</h1>
         {this.props.ideas.map(idea => <IdeaCard key={idea.id} idea={idea}/>)}
+        < IdeaForm />
       </div>
     );
   }
