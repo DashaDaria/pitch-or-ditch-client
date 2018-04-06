@@ -1,5 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import './IdeaCard.css';
+
+class Ideas extends Component {
+
+  componentDidMount() {
+    this.props.getIdeas()
+  }
+
+  render() {
+    return (
+      <div className="IdeaCard">
+        <h1>Ideas</h1>
+        {this.props.ideas.map(idea =>
+        <IdeaCard key={idea.id} idea={idea}/>
+      )}
+      </div>
+    );
+  }
+}
 
 const Ideas = ({ideas}) => (
   <div>

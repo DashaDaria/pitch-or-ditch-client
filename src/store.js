@@ -1,8 +1,4 @@
-import {
-  createStore,
-  applyMiddleware,
-  combineReducers
-} from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import Ideas from './reducers/Ideas';
 import IdeaForm from './reducers/IdeaForm'
