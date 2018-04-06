@@ -6,7 +6,7 @@ const WelcomeHeader = () => (
   <div className="App">
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">Virtual brainstorming session for your business</h1>
+      <p className="App-title">Virtual brainstorming session for your business</p>
     </header>
 
 
