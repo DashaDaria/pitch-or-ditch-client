@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import FormCard from '../components/FormCard';
+import { connect } from 'react-redux';
+
 class IdeaForm extends Component {
 
   render() {
     return (
       <div>
         Submit Your Idea
-        <FormCard />
+
       </div>
     )
   }
