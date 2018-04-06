@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import IdeaCard from '../components/IdeaCard';
-import IdeaForm from './IdeaForm';
 import { getIdeas } from '../actions/ideas';
 import './IdeaCard.css';
 
@@ -15,9 +14,8 @@ class Ideas extends Component {
   render() {
     return (
       <div className="IdeaCard">
-        <h1>Ideas</h1>
-        {this.props.ideas.map(idea => <IdeaCard key={idea.id} idea={idea}/>)}
-        < IdeaForm />
+        {this.props.ideas.map(idea => <IdeaCard key={idea.id} idea={idea} />)}
+
       </div>
     );
   }
@@ -29,4 +27,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps, { getIdeas })(Ideas);
+ export default connect(mapStateToProps, { getIdeas })(Ideas);
