@@ -17,8 +17,7 @@ class IdeaForm extends Component {
 
           <div>
           <label htmlFor="category">Category:</label>
-            <select value={category_id} onChange={this.handleOnChange}>
-              <option value=" "></option>
+            <select name="category_id" value={category_id} onChange={this.handleOnChange}>
               <option value="1">Social</option>
               <option value="2">Digital</option>
               <option value="3">Partnerships</option>
