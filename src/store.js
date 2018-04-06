@@ -1,9 +1,11 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import ideas from './reducers/ideas';
+import ideaForm from './reducers/ideaForm';
 
 const reducers = combineReducers({
-  ideas
+  ideas,
+  ideaForm
 });
 const middleware = [thunk];
 
