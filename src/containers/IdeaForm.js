@@ -13,4 +13,10 @@ class IdeaForm extends Component {
   }
 }
 
-export default IdeaForm;
+const mapStateToProps = (state) => {
+  return ({
+    ideaForm: state.ideaForm
+  })
+}
+
+ export default connect(mapStateToProps)(IdeaForm);
