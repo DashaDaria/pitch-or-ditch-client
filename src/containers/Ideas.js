@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import IdeaCard from '../components/IdeaCard';
 import { getIdeas } from '../actions/ideas';
-import './IdeaCard.css';
+import './Ideas.css';
 
 class Ideas extends Component {
 
@@ -13,7 +13,7 @@ class Ideas extends Component {
 
   render() {
     return (
-      <div className="IdeaCard">
+      <div className="IdeasContainer">
         {this.props.ideas.map(idea => <IdeaCard key={idea.id} idea={idea} />)}
 
       </div>
