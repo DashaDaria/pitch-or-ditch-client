@@ -3,6 +3,11 @@ import { connect } from 'react-redux';
 
 class IdeaForm extends Component {
 
+  handleOnChange = event => {
+    const { name, value } = event.target;
+    console.log(name)
+  }
+
   render() {
     const { category_id, name, content, author } = this.props.ideaForm;
     return (
@@ -12,7 +17,7 @@ class IdeaForm extends Component {
 
           <div>
           <label htmlFor="category">Category:</label>
-            <select value={category_id}>
+            <select value={category_id} onChange={this.handleOnChange}>
               <option value=" "></option>
               <option value="1">Social</option>
               <option value="2">Digital</option>
@@ -27,6 +32,7 @@ class IdeaForm extends Component {
             <input
               type="text"
               name="name"
+              onChange={this.handleOnChange}
               value={name}
             />
           </div>
@@ -36,6 +42,7 @@ class IdeaForm extends Component {
             <textarea
               type="text"
               name="content"
+              onChange={this.handleOnChange}
               value={content}
             />
           </div>
@@ -45,11 +52,12 @@ class IdeaForm extends Component {
             <input
               type="text"
               name="author"
+              onChange={this.handleOnChange}
               value={author}
             />
           </div>
+          <button type="submit">Submit Idea</button>
         </form>
-
       </div>
     )
   }
