@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { updateIdeaForm } from '../actions/ideaForm';
+
+
 class IdeaForm extends Component {
 
   handleOnChange = event => {
     const { name, value } = event.target;
-    console.log(name)
+    const currentIdeaForm = Object.assign({}, this.props.ideaForm, {
+      [name]: value
+    })
+    this.props.updateIdeaForm(currentIdeaForm)
   }
 
   render() {
@@ -68,4 +74,4 @@ const mapStateToProps = (state) => {
   })
 }
 
- export default connect(mapStateToProps)(IdeaForm);
+ export default connect(mapStateToProps, { updateIdeaForm })(IdeaForm);
