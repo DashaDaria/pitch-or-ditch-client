@@ -43,13 +43,13 @@ export const createIdea = idea => {
 export const upvoteIdea = ideaId => {
   return {
     type: 'UPVOTE_QUOTE',
-    IdeaId
+    ideaId
   }
 }
 
 export const downvoteIdea = ideaId => {
   return {
     type: 'DOWNVOTE_QUOTE',
-    IdeaId
+    ideaId
   }
 }

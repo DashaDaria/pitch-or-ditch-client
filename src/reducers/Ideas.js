@@ -1,4 +1,7 @@
 export default (state = [], action) => {
+  let index;
+  let idea;
+  
   switch(action.type) {
     case 'GET_IDEAS_SUCCESS':
       return action.ideas;
@@ -7,7 +10,7 @@ export default (state = [], action) => {
       return state.concat(action.idea);
 
     case 'UPVOTE_IDEA':
-      index = state.findIndex(idea => quote.id === action.ideaId);
+      index = state.findIndex(idea => idea.id === action.ideaId);
       idea = state[index];
 
       return [

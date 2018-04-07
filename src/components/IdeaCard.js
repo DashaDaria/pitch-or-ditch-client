@@ -10,13 +10,13 @@ const IdeaCard = ({ idea, upvoteIdea, downvoteIdea }) => (
         type="button"
         onClick={() => upvoteIdea(idea.id)}>
         Upvote
-      </button
+      </button>
 
       <button
         type="button"
         onClick={() => downvoteIdea(idea.id)}>
         Downvote
-      </button
+      </button>
 
 
       <p>{idea.content}</p>
