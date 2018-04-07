@@ -11,6 +11,7 @@ class IdeaForm extends Component {
     const { name, value } = event.target;
     const currentIdeaForm = Object.assign({}, this.props.ideaForm, {
       [name]: value
+
     })
     this.props.updateIdeaForm(currentIdeaForm)
   }
@@ -21,7 +22,7 @@ class IdeaForm extends Component {
   }
 
   render() {
-    const { category_id, name, content, author, votes } = this.props.ideaForm;
+    const { category_id, name, content, author } = this.props.ideaForm;
 
     return (
       <div>
@@ -30,6 +31,7 @@ class IdeaForm extends Component {
           <div>
           <label htmlFor="category">Category:</label>
             <select name="category_id" value={category_id} onChange={this.handleOnChange}>
+              <option></option>
               <option value="1">Social</option>
               <option value="2">Digital</option>
               <option value="3">Partnerships</option>
@@ -71,7 +73,6 @@ class IdeaForm extends Component {
             <input
               type="hidden"
               name="votes"
-              value={votes}
             />
           </div>
 

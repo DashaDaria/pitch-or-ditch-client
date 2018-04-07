@@ -3,7 +3,7 @@ const initialState = {
   name: '',
   content: '',
   author: '',
-  votes: 0
+  votes: ''
 }
 
 export default (state = initialState, action) => {
