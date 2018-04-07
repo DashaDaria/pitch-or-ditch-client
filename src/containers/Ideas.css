@@ -16,3 +16,23 @@
 .IdeaCard:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
+
+.btnUp {
+  margin: 1%;
+  color: #ffffff;
+
+}
+
+.btnUp:hover {
+  background: #327d07;
+}
+
+.btnDown {
+  margin: 1%;
+  color: #ffffff;
+  background: #e80c0c;
+}
+
+.btnDown:hover {
+  background: #b80407;
+}
