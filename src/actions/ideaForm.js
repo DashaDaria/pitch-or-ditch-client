@@ -1,7 +1,6 @@
 export const updateIdeaForm = ideaForm => {
-  debugger
   return {
-    type: 'UPDATED_IDEA',
+    type: 'ADD_IDEA',
     ideaForm
   }
 }

@@ -16,11 +16,11 @@ class IdeaForm extends Component {
 
   render() {
     const { category_id, name, content, author } = this.props.ideaForm;
+
     return (
       <div>
         <h4>Submit Your Idea</h4>
         <form>
-
           <div>
           <label htmlFor="category">Category:</label>
             <select name="category_id" value={category_id} onChange={this.handleOnChange}>
@@ -45,7 +45,6 @@ class IdeaForm extends Component {
           <div>
           <label htmlFor="content">Content:</label>
             <textarea
-              type="text"
               name="content"
               onChange={this.handleOnChange}
               value={content}
@@ -68,10 +67,10 @@ class IdeaForm extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return ({
+const mapStateToProps = state => {
+  return {
     ideaForm: state.ideaForm
-  })
+  }
 }
 
  export default connect(mapStateToProps, { updateIdeaForm })(IdeaForm);
