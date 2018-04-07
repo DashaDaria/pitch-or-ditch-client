@@ -1,16 +1,9 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import rootReducer from './reducers/index'
 import thunk from 'redux-thunk';
-import ideas from './reducers/ideas';
-import ideaForm from './reducers/ideaForm';
-
-const reducers = combineReducers({
-  ideas,
-  ideaForm
-});
-const middleware = [thunk];
 
 export default createStore(
-  reducers,
+  rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(...middleware),
+  applyMiddleware(thunk),
 );
