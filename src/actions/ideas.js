@@ -38,3 +38,18 @@ export const createIdea = idea => {
       .catch(error => console.log(error))
   }
 }
+
+
+export const upvoteIdea = ideaId => {
+  return {
+    type: 'UPVOTE_QUOTE',
+    IdeaId
+  }
+}
+
+export const downvoteIdea = ideaId => {
+  return {
+    type: 'DOWNVOTE_QUOTE',
+    IdeaId
+  }
+}
