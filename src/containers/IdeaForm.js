@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { updateIdeaForm } from '../actions/ideaForm';
+import { createIdea } from '../actions/ideas';
 
 
 class IdeaForm extends Component {
@@ -14,13 +15,18 @@ class IdeaForm extends Component {
     this.props.updateIdeaForm(currentIdeaForm)
   }
 
+  handleOnSubmit = event => {
+    event.preventDefault()
+    this.props.createIdea(this.props.ideaForm)
+  }
+
   render() {
     const { category_id, name, content, author } = this.props.ideaForm;
 
     return (
       <div>
         <h4>Submit Your Idea</h4>
-        <form>
+        <form onSubmit-{this.handleOnSubmit}>
           <div>
           <label htmlFor="category">Category:</label>
             <select name="category_id" value={category_id} onChange={this.handleOnChange}>
