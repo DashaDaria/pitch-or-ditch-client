@@ -21,12 +21,12 @@ class IdeaForm extends Component {
   }
 
   render() {
-    const { category_id, name, content, author } = this.props.ideaForm;
+    const { category_id, name, content, author, votes } = this.props.ideaForm;
 
     return (
       <div>
         <h4>Submit Your Idea</h4>
-        <form onSubmit-{this.handleOnSubmit}>
+        <form onSubmit={this.handleOnSubmit}>
           <div>
           <label htmlFor="category">Category:</label>
             <select name="category_id" value={category_id} onChange={this.handleOnChange}>
@@ -66,6 +66,15 @@ class IdeaForm extends Component {
               value={author}
             />
           </div>
+
+          <div>
+            <input
+              type="hidden"
+              name="votes"
+              value={votes}
+            />
+          </div>
+
           <button type="submit">Submit Idea</button>
         </form>
       </div>
@@ -79,4 +88,4 @@ const mapStateToProps = state => {
   }
 }
 
- export default connect(mapStateToProps, { updateIdeaForm })(IdeaForm);
+ export default connect(mapStateToProps, { updateIdeaForm, createIdea })(IdeaForm);
