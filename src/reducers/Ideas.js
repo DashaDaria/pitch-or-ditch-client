@@ -1,7 +1,7 @@
 export default (state = [], action) => {
   let index;
   let idea;
-  
+
   switch(action.type) {
     case 'GET_IDEAS_SUCCESS':
       return action.ideas;
@@ -19,7 +19,7 @@ export default (state = [], action) => {
         ...state.slice(index + 1)
       ];
 
-    case 'DOWNVOTE_QUOTE':
+    case 'DOWNVOTE_IDEA':
       index = state.findIndex(idea => idea.id === action.ideaId);
       idea = state[index];
       if (idea.votes > 0) {

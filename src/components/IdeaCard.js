@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IdeaCard = ({ idea, upvoteIdea, downvoteIdea }) => (
+const IdeaCard = ({ idea, upvoteIdea, downvoteIdea }) =>
 
     <div className="IdeaCard" key={idea.id}>
       <h4>{idea.name} || <span>{idea.category_name}</span></h4>
@@ -22,6 +22,5 @@ const IdeaCard = ({ idea, upvoteIdea, downvoteIdea }) => (
       <p>{idea.content}</p>
       <small>Submitted by: @{idea.author}</small>
   </div>
-);
 
 export default IdeaCard;
