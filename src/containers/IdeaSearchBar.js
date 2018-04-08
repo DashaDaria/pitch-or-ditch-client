@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Ideas.css';
 
 
 class IdeaSearchBar extends Component {
@@ -14,7 +15,7 @@ class IdeaSearchBar extends Component {
     return (
       <div>
       <form >
-        <div>
+        <div className="searchBar">
         <label htmlFor="category">Search Ideas By Category:</label>
           <select name="category_id" >
             <option></option>
@@ -24,8 +25,9 @@ class IdeaSearchBar extends Component {
             <option value="4">On-Air</option>
             <option value="5">On-Ground</option>
           </select>
+            <button type="submit">Filter</button>
         </div>
-        <button type="submit">Filter</button>
+
         </form>
       </div>
     )

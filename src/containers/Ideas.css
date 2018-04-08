@@ -58,3 +58,8 @@
   -moz-border-radius: 5;
   border-radius: 5px;
 }
+
+.searchBar {
+  text-align: left;
+  padding: 10px;
+}
