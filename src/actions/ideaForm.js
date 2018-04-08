@@ -4,3 +4,9 @@ export const updateIdeaForm = ideaForm => {
     ideaForm
   }
 }
+
+export const resetIdeaForm = () => {
+  return {
+    type: 'RESET_IDEA_FORM'
+  }
+}

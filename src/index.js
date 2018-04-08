@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
 import './index.css';
 import App from './containers/App';
@@ -10,36 +10,71 @@ import registerServiceWorker from './registerServiceWorker';
 import store from './store.js';
 import WelcomeHeader from './components/WelcomeHeader';
 
-const About = () => {
-  return (
-    <div>
-      <h1>This is my about component!</h1>
-    </div>
-  );
-};
+const link = {
+  width: '100px',
+  padding: '12px',
+  margin: '0 6px 6px',
+  background: 'blue',
+  textDecoration: 'none',
+  color: 'white',
+}
 
-const Login = () => {
-  return (
+/* add the navbar component */
+const Navbar = () =>
+  <div>
+    <NavLink
+      to="/"
+      /* set exact so it knows to only set activeStyle when route is deeply equal to link */
+      exact
+      /* add styling to Navlink */
+      style={link}
+      /* add prop for activeStyle */
+      activeStyle={{
+        background: 'darkblue'
+      }}
+    >Home</NavLink>
+    <NavLink
+      to="/about"
+      exact
+      style={link}
+      activeStyle={{
+        background: 'darkblue'
+      }}
+    >About</NavLink>
+    <NavLink
+      to="/login"
+      exact
+      style={link}
+      activeStyle={{
+        background: 'darkblue'
+      }}
+    >Login</NavLink>
+  </div>;
+
+const Home = () => <h1>Home!</h1>;
+
+const About = () => <h1>This is my about component!</h1>;
+
+const Login = () =>
+  <form>
+    <h1>Login</h1>
     <div>
-      <form>
-        <div>
-          <input type="text" name="username" placeholder="Username" />
-          <label htmlFor="username">Username</label>
-        </div>
-        <div>
-          <input type="password" name="password" placeholder="Password" />
-          <label htmlFor="password">Password</label>
-        </div>
-        <input type="submit" value="Login" />
-      </form>
+      <input type="text" name="username" placeholder="Username" />
+      <label htmlFor="username">Username</label>
     </div>
-  );
-};
+    <div>
+      <input type="password" name="password" placeholder="Password" />
+      <label htmlFor="password">Password</label>
+    </div>
+    <input type="submit" value="Login" />
+  </form>;
 
 ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div>
+      <App />
+      <Navbar />
         <Route path='/' render={WelcomeHeader} />
         <Route exact path='/home' component={App} />
         <Route exact path='/about' render={About} />

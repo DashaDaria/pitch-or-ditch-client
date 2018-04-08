@@ -1,3 +1,4 @@
+import { resetIdeaForm } from './ideaForm';
 
 const setIdeas = ideas => {
   return {
@@ -34,6 +35,7 @@ export const createIdea = idea => {
       .then(response => response.json())
       .then(idea => {
         dispatch(addIdea(idea))
+        dispatch(resetIdeaForm())
       })
       .catch(error => console.log(error))
   }
