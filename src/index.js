@@ -73,10 +73,10 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div>
-      <App />
+
       <Navbar />
-        <Route path='/' render={WelcomeHeader} />
-        <Route exact path='/home' component={App} />
+        <Route path='/'  component={App} />
+        <Route exact path='/home' render={WelcomeHeader} />
         <Route exact path='/about' render={About} />
         <Route exact path='/login' render={Login} />
       </div>
