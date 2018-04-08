@@ -40,8 +40,8 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div>
-        
-        <Route path='/home' render={WelcomeHeader} />
+        <Route path='/' render={WelcomeHeader} />
+        <Route exact path='/home' component={App} />
         <Route exact path='/about' render={About} />
         <Route exact path='/login' render={Login} />
       </div>
