@@ -14,7 +14,7 @@ class Ideas extends Component {
   }
 
   render() {
-    const { ideas, upvoteIdea, downvoteIdea } = this.props
+    const { ideas, upvoteIdea, downvoteIdea, deleteIdea } = this.props
     return (
       <div className="IdeasContainer">
         {ideas.map(idea => <IdeaCard key={idea.id} idea={idea} upvoteIdea={upvoteIdea} downvoteIdea={downvoteIdea} deleteIdea={deleteIdea}/>)}
@@ -32,4 +32,4 @@ const mapStateToProps = (state) => {
 }
 
 
- export default connect(mapStateToProps, { getIdeas, upvoteIdea, downvoteIdea } )(Ideas);
+ export default connect(mapStateToProps, { getIdeas, upvoteIdea, downvoteIdea, deleteIdea } )(Ideas);

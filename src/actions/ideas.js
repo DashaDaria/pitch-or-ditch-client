@@ -85,16 +85,9 @@ export const deleteIdea = idea => {
   return dispatch => {
     return fetch(`http://localhost:3001/api/ideas/${idea.id}`, {
       method: "DELETE",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      credentials: 'same-origin',
-      body: JSON.stringify({ idea: idea })
-    })
-      .then(response => response.json())
-      .then(idea => {
+    }).then(response => {
         dispatch(clickDeleteIdea(idea.id))
       })
-      .catch(error => console.log(error))
+      .catch(error => console.log(error));
   }
 }
