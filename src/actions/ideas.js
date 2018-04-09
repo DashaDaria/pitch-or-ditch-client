@@ -54,14 +54,15 @@ export const upvoteIdea = idea => {
     return fetch(`http://localhost:3001/api/ideas/${idea.id}`, {
       method: "PATCH",
       headers: {
+        "Accept": "application/json"
         "Content-Type": "application/json"
       },
       credentials: 'same-origin',
-      body: JSON.stringify({ idea })
+      body: JSON.stringify({ idea: idea })
     })
       .then(response => response.json())
-      .then(data => {
-        dispatch(upvoteClicked(data.id))
+      .then(idea => {
+        dispatch(upvoteClicked(idea.id))
       })
       .catch(error => console.log(error))
   }
@@ -70,6 +71,13 @@ export const upvoteIdea = idea => {
 export const downvoteIdea = ideaId => {
   return {
     type: 'DOWNVOTE_IDEA',
+    ideaId
+  }
+}
+
+const deleteIdea = ideaId => {
+  return {
+    type: 'DELETE_IDEA',
     ideaId
   }
 }

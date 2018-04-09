@@ -59,6 +59,27 @@
   border-radius: 5px;
 }
 
+.btnDelete {
+  margin-left: 1%;
+  color: #990808;
+  border: solid #990808 1px;
+  font-size: 16px;
+  text-decoration: none;
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+}
+
+.btnDelete:hover {
+  background: #b80407;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+}
+
 .searchBar {
   text-align: left;
   padding: 10px;

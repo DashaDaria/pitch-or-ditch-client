@@ -20,6 +20,13 @@ const IdeaCard = ({ idea, upvoteIdea, downvoteIdea }) =>
           -
         </button>
 
+        <button
+          className="btnDelete"
+          type="button"
+          onClick={() => deleteIdea(idea)}>
+          X
+        </button>
+
 
       <p>{idea.content}</p>
       <small>Submitted by: @{idea.author}</small>
