@@ -9,6 +9,9 @@ export default (state = [], action) => {
     case 'CREATE_IDEA_SUCCESS':
       return state.concat(action.idea);
 
+    case 'DELETE_IDEA':
+      return state.filter(idea => idea.id !== action.ideaId);
+
     case 'UPVOTE_IDEA':
       index = state.findIndex(idea => idea.id === action.ideaId);
       idea = state[index];
