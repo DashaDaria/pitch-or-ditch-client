@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+// import { bindActionCreators } from 'redux';
 
 import IdeaCard from '../components/IdeaCard';
 import IdeaForm from './IdeaForm';
@@ -30,4 +31,5 @@ const mapStateToProps = (state) => {
   })
 }
 
- export default connect(mapStateToProps, { getIdeas, upvoteIdea, downvoteIdea })(Ideas);
+
+ export default connect(mapStateToProps, { getIdeas, upvoteIdea, downvoteIdea } )(Ideas);

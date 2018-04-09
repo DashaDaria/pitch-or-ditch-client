@@ -7,19 +7,19 @@ const setIdeas = ideas => {
   }
 }
 
-const addIdea = idea => {
-  return {
-    type: 'CREATE_IDEA_SUCCESS',
-    idea
-  }
-}
-
 export const getIdeas = () => {
   return dispatch => {
     return fetch('http://localhost:3001/api/ideas')
       .then(response => response.json())
       .then(ideas => dispatch(setIdeas(ideas)))
       .catch(error => console.log(error));
+  }
+}
+
+const addIdea = idea => {
+  return {
+    type: 'CREATE_IDEA_SUCCESS',
+    idea
   }
 }
 
@@ -42,10 +42,28 @@ export const createIdea = idea => {
 }
 
 
-export const upvoteIdea = ideaId => {
+const upvoteClicked = ideaId => {
   return {
     type: 'UPVOTE_IDEA',
     ideaId
+  }
+}
+
+export const upvoteIdea = idea => {
+  return dispatch => {
+    return fetch(`http://localhost:3001/api/ideas/${idea.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify({ idea })
+    })
+      .then(response => response.json())
+      .then(data => {
+        dispatch(upvoteClicked(data.id))
+      })
+      .catch(error => console.log(error))
   }
 }
 

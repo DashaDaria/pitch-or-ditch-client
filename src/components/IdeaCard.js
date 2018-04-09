@@ -9,17 +9,17 @@ const IdeaCard = ({ idea, upvoteIdea, downvoteIdea }) =>
         <button
           className="btnUp"
           type="button"
-          onClick={() => upvoteIdea(idea.id)}>
+          onClick={() => upvoteIdea(idea)}>
           +
         </button>
 
         <button
           className="btnDown"
           type="button"
-          onClick={() => downvoteIdea(idea.id)}>
+          onClick={() => downvoteIdea(idea)}>
           -
         </button>
-      
+
 
       <p>{idea.content}</p>
       <small>Submitted by: @{idea.author}</small>
