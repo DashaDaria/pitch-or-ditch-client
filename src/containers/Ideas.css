@@ -40,6 +40,7 @@
 
 .btnDown {
   margin-left: 1%;
+  margin-right: 1%;
   color: #990808;
   border: solid #990808 1px;
   font-size: 16px;
@@ -61,8 +62,9 @@
 
 .btnDelete {
   margin-left: 1%;
-  color: #990808;
-  border: solid #990808 1px;
+  color: ##000000;
+  border: solid ##000000 1px;
+  background: #fcfcfc;
   font-size: 16px;
   text-decoration: none;
   -webkit-border-radius: 5;
@@ -71,7 +73,7 @@
 }
 
 .btnDelete:hover {
-  background: #b80407;
+  background: #000000;
   color: #ffffff;
   font-size: 16px;
   text-decoration: none;

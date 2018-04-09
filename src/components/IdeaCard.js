@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IdeaCard = ({ idea, upvoteIdea, downvoteIdea }) =>
+const IdeaCard = ({ idea, upvoteIdea, downvoteIdea, deleteIdea }) =>
 
     <div className="IdeaCard" key={idea.id}>
       <h4>{idea.name} || <span>{idea.category_name}</span></h4>
@@ -24,7 +24,7 @@ const IdeaCard = ({ idea, upvoteIdea, downvoteIdea }) =>
           className="btnDelete"
           type="button"
           onClick={() => deleteIdea(idea)}>
-          X
+          x
         </button>
 
 

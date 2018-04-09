@@ -54,7 +54,6 @@ export const upvoteIdea = idea => {
     return fetch(`http://localhost:3001/api/ideas/${idea.id}`, {
       method: "PATCH",
       headers: {
-        "Accept": "application/json"
         "Content-Type": "application/json"
       },
       credentials: 'same-origin',
@@ -75,9 +74,27 @@ export const downvoteIdea = ideaId => {
   }
 }
 
-const deleteIdea = ideaId => {
+const clickDeleteIdea = ideaId => {
   return {
     type: 'DELETE_IDEA',
     ideaId
+  }
+}
+
+export const deleteIdea = idea => {
+  return dispatch => {
+    return fetch(`http://localhost:3001/api/ideas/${idea.id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify({ idea: idea })
+    })
+      .then(response => response.json())
+      .then(idea => {
+        dispatch(clickDeleteIdea(idea.id))
+      })
+      .catch(error => console.log(error))
   }
 }

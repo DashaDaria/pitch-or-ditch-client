@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import IdeaCard from '../components/IdeaCard';
 import IdeaForm from './IdeaForm';
-import { getIdeas, upvoteIdea, downvoteIdea } from '../actions/ideas';
+import { getIdeas, upvoteIdea, downvoteIdea, deleteIdea } from '../actions/ideas';
 import './Ideas.css';
 
 class Ideas extends Component {
@@ -17,7 +17,7 @@ class Ideas extends Component {
     const { ideas, upvoteIdea, downvoteIdea } = this.props
     return (
       <div className="IdeasContainer">
-        {ideas.map(idea => <IdeaCard key={idea.id} idea={idea} upvoteIdea={upvoteIdea} downvoteIdea={downvoteIdea}/>)}
+        {ideas.map(idea => <IdeaCard key={idea.id} idea={idea} upvoteIdea={upvoteIdea} downvoteIdea={downvoteIdea} deleteIdea={deleteIdea}/>)}
 
         <IdeaForm />
       </div>
