@@ -1,12 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const IdeasShow = props => {
+const IdeaShow = props => {
 
   return(
     <div>
-      <h3>Ideas Show Component</h3>
+      <h3>Idea Show Component</h3>
     </div>
   )
 }
 
-export default IdeasShow;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    ideaId: ownProps.match.params.ideaId
+  }
+}
+
+export default connect(mapStateToProps)(IdeaShow);
