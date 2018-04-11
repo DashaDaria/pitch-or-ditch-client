@@ -16,6 +16,12 @@ const NavBar = () => {
       >
         Ideas
       </NavLink>
+      <NavLink
+        style={{ marginRight: '10px' }}
+        to="/team"
+      >
+        Team
+      </NavLink>
     </div>
   );
 }

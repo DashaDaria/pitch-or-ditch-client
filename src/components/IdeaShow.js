@@ -1,19 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const IdeaShow = props => {
+import IdeaCard from './IdeaCard';
 
-  return(
-    <div>
-      <h3>Idea Show Component</h3>
-    </div>
-  )
-}
+const IdeaShow = ({ idea }) =>
+  <div>
+    <h3>Name: { idea.name }</h3>
+  </div>
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    ideaId: ownProps.match.params.ideaId
+  const mapStateToProps = (state, ownProps) => {
+    const idea = state.ideas.find(idea => idea.id === ownProps.match.params.ideaId)
+
+    if(idea) {
+      return { idea }
+    } else {
+      return { idea: {}}
+    }
   }
-}
 
 export default connect(mapStateToProps)(IdeaShow);

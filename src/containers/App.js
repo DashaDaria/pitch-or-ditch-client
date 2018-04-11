@@ -3,10 +3,12 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
+
 import NavBar from '../components/Navbar';
 import WelcomeHeader from '../components/WelcomeHeader';
 import IdeasPage from './IdeasPage';
-import './App.css';
+import Team from '../components/Team';
+import '../App.css';
 
 class App extends Component {
   render() {
@@ -16,6 +18,7 @@ class App extends Component {
         <NavBar />
           <Route exact path='/' component={WelcomeHeader} />
           <Route path='/ideas' component={IdeasPage}/>
+          <Route path='/team' component={Team} />
         </div>
       </Router>
     );
