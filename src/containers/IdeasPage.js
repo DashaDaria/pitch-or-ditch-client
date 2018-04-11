@@ -1,34 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
 
-import IdeaCard from '../components/IdeaCard';
-import IdeaForm from './IdeaForm';
+import IdeasList from '../components/IdeasList';
 
-import { getIdeas, upvoteIdea, downvoteIdea, deleteIdea } from '../actions/ideas';
-import './Ideas.css';
+const IdeasPage = ({ ideas }) =>
+  <div>
+    <IdeasList ideas={ideas} />
+  </div>
 
-class IdeasPage extends Component {
-
-  componentDidMount() {
-    this.props.getIdeas()
+  const mapStateToProps = (state) => {
+    return {
+      ideas: state.ideas
+    }
   }
 
-  render() {
-    const { ideas, upvoteIdea, downvoteIdea, deleteIdea } = this.props
-    return (
-      <div className="IdeasContainer">
-          {ideas.map(idea => <IdeaCard key={idea.id} idea={idea} upvoteIdea={upvoteIdea} downvoteIdea={downvoteIdea} deleteIdea={deleteIdea}/>)}
-          <IdeaForm />
-      </div>
-    );
-  }
-}
-
-const mapStateToProps = (state) => {
-  return {
-    ideas: state.ideas,
-  }
-}
-
-
- export default connect(mapStateToProps, { getIdeas, upvoteIdea, downvoteIdea, deleteIdea } )(IdeasPage);
+  export default connect(mapStateToProps)(IdeasPage);
