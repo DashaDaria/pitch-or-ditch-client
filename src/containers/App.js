@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 
 import NavBar from '../components/Navbar';
-import WelcomeHeader from '../components/WelcomeHeader';
+import Welcome from '../components/Welcome';
 import IdeasPage from './IdeasPage';
 import Team from '../components/Team';
 import IdeaForm from './IdeaForm';
@@ -17,7 +17,7 @@ class App extends Component {
       <Router>
         <div className="App">
         <NavBar />
-          <Route exact path='/' component={WelcomeHeader} />
+          <Route exact path='/' component={Welcome} />
           <Route path='/ideas' component={IdeasPage}/>
           <Route path='/new' component={IdeaForm}/>
           <Route path='/team' component={Team} />
