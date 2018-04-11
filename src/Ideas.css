@@ -2,6 +2,22 @@
   margin: 1%;
 }
 
+.category {
+  font-variant: small-caps;
+  color: #073c91;
+  font-weight: bold;
+}
+
+.idea-form{
+  text-align: left;
+  margin: 5%;
+}
+
+.content {
+  color: grey;
+}
+
+
 .IdeasContainer {
   padding: 10px;
 }

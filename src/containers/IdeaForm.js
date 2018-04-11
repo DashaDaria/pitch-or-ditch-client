@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { FormGroup, ControlLabel, Button, FormControl } from 'react-bootstrap';
 
 import { updateIdeaForm } from '../actions/ideaForm';
 import { createIdea } from '../actions/ideas';
@@ -25,49 +26,47 @@ class IdeaForm extends Component {
     const { category_id, name, content, author } = this.props.ideaForm;
 
     return (
-      <div>
+      <div className="idea-form">
         <h4>Submit Your Idea</h4>
         <form onSubmit={this.handleOnSubmit}>
-          <div>
-          <label htmlFor="category">Category:</label>
-            <select name="category_id" value={category_id} onChange={this.handleOnChange}>
+
+        <FormGroup controlId="formControlSelect">
+          <ControlLabel>Category</ControlLabel>
+          <FormControl componentClass="select" placeholder="choose category" name="category_id" value={category_id} onChange={this.handleOnChange}>
               <option></option>
               <option value="1">Social</option>
               <option value="2">Digital</option>
               <option value="3">Partnerships</option>
               <option value="4">On-Air</option>
               <option value="5">On-Ground</option>
-            </select>
-          </div>
+            </FormControl>
+            </FormGroup>
 
-          <div>
-          <label htmlFor="name">Name:</label>
-            <input
+
+
+          <ControlLabel>Name: </ControlLabel>
+          <FormControl
               type="text"
               name="name"
               onChange={this.handleOnChange}
               value={name}
             />
-          </div>
 
-          <div>
-          <label htmlFor="content">Content:</label>
+            <ControlLabel>Author: </ControlLabel>
+              <FormControl
+                type="text"
+                name="author"
+                onChange={this.handleOnChange}
+                value={author}
+              />
+
+          <ControlLabel>Content: </ControlLabel>
             <textarea
               name="content"
               onChange={this.handleOnChange}
               value={content}
             />
-          </div>
 
-          <div>
-          <label htmlFor="author">Author:</label>
-            <input
-              type="text"
-              name="author"
-              onChange={this.handleOnChange}
-              value={author}
-            />
-          </div>
 
           <div>
             <input
@@ -76,7 +75,8 @@ class IdeaForm extends Component {
             />
           </div>
 
-          <button type="submit">Submit Idea</button>
+          <Button bsStyle="default" type="submit">Submit Idea</Button>
+
         </form>
       </div>
     )
