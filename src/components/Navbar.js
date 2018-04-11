@@ -18,10 +18,17 @@ const NavBar = () => {
       </NavLink>
       <NavLink
         style={{ marginRight: '10px' }}
+        to="/new"
+      >
+        Submit Idea
+      </NavLink>
+      <NavLink
+        style={{ marginRight: '10px' }}
         to="/team"
       >
         Team
       </NavLink>
+
     </div>
   );
 }
