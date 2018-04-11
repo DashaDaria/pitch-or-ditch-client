@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const IdeaCard = ({ idea, upvoteIdea, downvoteIdea, deleteIdea }) =>
 
@@ -30,6 +31,8 @@ const IdeaCard = ({ idea, upvoteIdea, downvoteIdea, deleteIdea }) =>
 
       <p>{idea.content}</p>
       <small>Submitted by: @{idea.author}</small>
+      <Link key={idea.id} to={`/ideas/$idea.id`}>{idea.name}
+      </Link>
   </div>
 
 export default IdeaCard;
