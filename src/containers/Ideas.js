@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import IdeaCard from '../components/IdeaCard';
 import IdeaForm from './IdeaForm';
+import IdeaSearchBar from './IdeaSearchBar';
 import { getIdeas, upvoteIdea, downvoteIdea, deleteIdea } from '../actions/ideas';
 import './Ideas.css';
 
@@ -16,10 +17,12 @@ class Ideas extends Component {
   render() {
     const { ideas, upvoteIdea, downvoteIdea, deleteIdea } = this.props
     return (
-      <div className="IdeasContainer">
-        {ideas.map(idea => <IdeaCard key={idea.id} idea={idea} upvoteIdea={upvoteIdea} downvoteIdea={downvoteIdea} deleteIdea={deleteIdea}/>)}
-
-        <IdeaForm />
+      <div className="search-bar">
+        < IdeaSearchBar />
+        <div className="IdeasContainer">
+          {ideas.map(idea => <IdeaCard key={idea.id} idea={idea} upvoteIdea={upvoteIdea} downvoteIdea={downvoteIdea} deleteIdea={deleteIdea}/>)}
+          <IdeaForm />
+          </div>
       </div>
     );
   }
