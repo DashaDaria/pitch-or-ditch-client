@@ -1,12 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
+
 
 import IdeaCard from '../components/IdeaCard';
 import IdeaForm from './IdeaForm';
-import IdeaSearchBar from './IdeaSearchBar';
+
+import CategoryFilter from './CategoryFilter';
+
 import { getIdeas, upvoteIdea, downvoteIdea, deleteIdea } from '../actions/ideas';
 import './Ideas.css';
+
+const getVisibleIdeas = (ideas, categoryFilter ) => {
+  if(categoryFilter.length === 0) {
+    return ideas
+  } else {
+    let filteredIdeas = []
+    ideas.forEach( idea => {
+      if(filter.categoryFilter.indexOf(idea.category_id) !== -1 ){
+      filteredIdeas.push(idea)
+      }
+    })
+  }
+}
+
 
 class Ideas extends Component {
 

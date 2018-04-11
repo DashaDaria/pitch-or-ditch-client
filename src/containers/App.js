@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import WelcomeHeader from '../components/WelcomeHeader';
 import CategoryFilter from './CategoryFilter';
-import Ideas from './Ideas';
+import VisibleIdeasList from './VisibleIdeasList';
 import './App.css';
 
 class App extends Component {
@@ -10,8 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <WelcomeHeader />
-        <CategoryFilter />
-        <Ideas />
+        <VisibleIdeasList />
       </div>
     );
   }
