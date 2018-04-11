@@ -1,3 +1,7 @@
+.add-margin {
+  margin: 1%;
+}
+
 .IdeasContainer {
   padding: 10px;
 }
@@ -85,4 +89,10 @@
 .search-bar {
   text-align: left;
   padding: 10px;
+}
+
+.votes {
+  text-align: left;
+  color: grey;
+  font-style: italic;
 }

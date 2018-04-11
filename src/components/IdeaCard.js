@@ -1,37 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Badge, Button, ButtonToolbar } from 'react-bootstrap';
 
 
 const IdeaCard = ({ idea, upvoteIdea, downvoteIdea, deleteIdea }) =>
     <div className="IdeaCard" key={idea.id}>
+      <div className="votes">
+        <Badge>{idea.votes}</Badge>
+        <p>votes</p>
+      </div>
       <h4>{idea.name} || <span>{idea.category_name}</span></h4>
-      <p><em className="Votes">Votes: {idea.votes}</em></p>
-
-        <button
-          className="btnUp"
-          type="button"
-          onClick={() => upvoteIdea(idea)}>
-          +
-        </button>
-
-        <button
-          className="btnDown"
-          type="button"
-          onClick={() => downvoteIdea(idea)}>
-          -
-        </button>
-
-        <button
-          className="btnDelete"
-          type="button"
-          onClick={() => deleteIdea(idea)}>
-          x
-        </button>
-
-
       <p>{idea.content}</p>
       <small>Submitted by: @{idea.author}</small><br />
-      <Link to={`/ideas/${idea.id}`}>{idea.name}</Link>
-  </div>
+
+      <Button className="add-margin" bsSize="small" bsStyle="success" type="button" onClick={() => upvoteIdea(idea)}> + </Button>
+      <Button className="add-margin" bsSize="small" bsStyle="warning" type="button" onClick={() => downvoteIdea(idea)}> - </Button>
+      <Button className="add-margin" bsSize="small" bsStyle="default" type="button" onClick={() => deleteIdea(idea)}> x </Button>
+
+
+
+    </div>
 
 export default IdeaCard;
