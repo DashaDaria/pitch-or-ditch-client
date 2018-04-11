@@ -16,7 +16,7 @@ const getVisibleIdeas = (ideas, categoryFilter ) => {
   } else {
     let filteredIdeas = []
     ideas.forEach( idea => {
-      if(filter.categoryFilter.indexOf(idea.category_id) !== -1 ){
+      if(categoryFilter.indexOf(idea.category_id) !== -1 ){
       filteredIdeas.push(idea)
       }
     })
@@ -24,17 +24,18 @@ const getVisibleIdeas = (ideas, categoryFilter ) => {
 }
 
 
-class Ideas extends Component {
+class VisibleIdeasList extends Component {
 
   componentDidMount() {
     this.props.getIdeas()
   }
 
   render() {
+
     const { ideas, upvoteIdea, downvoteIdea, deleteIdea } = this.props
     return (
       <div className="search-bar">
-        < IdeaSearchBar />
+        < CategoryFilter />
         <div className="IdeasContainer">
           {ideas.map(idea => <IdeaCard key={idea.id} idea={idea} upvoteIdea={upvoteIdea} downvoteIdea={downvoteIdea} deleteIdea={deleteIdea}/>)}
           <IdeaForm />
@@ -45,10 +46,10 @@ class Ideas extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return ({
+  return {
     ideas: state.ideas
-  })
+  }
 }
 
 
- export default connect(mapStateToProps, { getIdeas, upvoteIdea, downvoteIdea, deleteIdea } )(Ideas);
+ export default connect(mapStateToProps, { getIdeas, upvoteIdea, downvoteIdea, deleteIdea } )(VisibleIdeasList);
