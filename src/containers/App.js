@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
 import WelcomeHeader from '../components/WelcomeHeader';
-import CategoryFilter from './CategoryFilter';
-import VisibleIdeasList from './VisibleIdeasList';
+import IdeasPage from './IdeasPage';
 import './App.css';
 
 class App extends Component {
@@ -10,7 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <WelcomeHeader />
-        <VisibleIdeasList />
+        <IdeasPage/>
       </div>
     );
   }
