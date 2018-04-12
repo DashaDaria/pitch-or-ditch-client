@@ -2,6 +2,13 @@
   margin: 1%;
 }
 
+.counter {
+  text-align: right;
+  color: #073c91;
+  font-style: italic;
+  font-size: small;
+}
+
 .category {
   font-variant: small-caps;
   color: #073c91;

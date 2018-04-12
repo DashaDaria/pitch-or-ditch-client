@@ -69,7 +69,9 @@ class IdeaForm extends Component {
                 onChange={this.handleOnChange}
                 value={content}
               />
+              <span className="counter">{content.length}/250</span>
           </FormGroup>
+
 
           <div>
             <input type="hidden" name="votes"/>
