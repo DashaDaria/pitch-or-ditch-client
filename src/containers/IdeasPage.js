@@ -15,8 +15,9 @@ class IdeasPage extends Component {
   render() {
     const { ideas, upvoteIdea, downvoteIdea, deleteIdea } = this.props
     return (
-      <div>
+
         <div className="IdeasContainer">
+          <TeamList />
           {ideas.map(idea =>
               <IdeaCard key={idea.id}
               idea={idea}
@@ -25,8 +26,6 @@ class IdeasPage extends Component {
               deleteIdea={deleteIdea}/>
             )}
         </div>
-        <TeamList />
-    </div>
     );
   }
 }
