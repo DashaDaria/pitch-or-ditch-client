@@ -1,18 +1,18 @@
 import React from 'react';
 import '../App.css';
+import { Jumbotron, Button } from 'react-bootstrap';
 import logo from '../logo.svg';
 
 const WelcomeHeader = () => (
   <div className="App">
-    <header className="App-header">
+    <Jumbotron>
       <img src={logo} className="App-logo" alt="logo" />
-      <p className="App-title">virtual brainstorming session for your business</p>
-    </header>
-
-
-    <p className="App-topic">
-      <strong>Topic:</strong> San Diego Comic-Con 2018
-    </p>
+      <p>virtual brainstorming session for your business</p>
+      <p>Goal: San Diego Comic-Con 2018</p>
+      <p>
+        <Button bsStyle="primary">Start Pitching</Button>
+      </p>
+    </Jumbotron>
   </div>
 );
 
