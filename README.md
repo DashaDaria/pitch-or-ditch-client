@@ -1,4 +1,4 @@
-##Overview
+## Overview
 Pitch or Ditch is a brainstorming tool designed to be used by teams who are faced with ideation challenges. As an example, this tool can be used by sponsorship marketing groups that have a need to develop new integrated media campaigns. Pitch or Ditch allows team members to submit their ideas based on pre-determined categories. Each team member has access to the Idea List and can vote on his/her favorite. The goal of this tool is to allow for remote collaborative brainstorming and filtering of the best ideas, all-the-while saving precious time.
 
 The API can be found at https://github.com/DashaDaria/pitch-or-ditch-api
