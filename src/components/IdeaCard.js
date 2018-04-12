@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Badge, Button, ButtonToolbar } from 'react-bootstrap';
+import { Badge, Button } from 'react-bootstrap';
 
 
 const IdeaCard = ({ idea, upvoteIdea, downvoteIdea, deleteIdea }) =>

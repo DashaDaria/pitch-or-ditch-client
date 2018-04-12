@@ -16,7 +16,9 @@ class IdeaForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault()
-    this.props.createIdea(this.props.ideaForm)
+    const { createIdea, history } = this.props;
+    createIdea(this.props.ideaForm);
+    history.push('/ideas')
   }
 
   render() {

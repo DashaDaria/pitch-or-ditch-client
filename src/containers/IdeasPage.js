@@ -13,7 +13,7 @@ class IdeasPage extends Component {
   }
 
   render() {
-    const { match, ideas, upvoteIdea, downvoteIdea, deleteIdea } = this.props
+    const { ideas, upvoteIdea, downvoteIdea, deleteIdea } = this.props
     return (
         <div className="IdeasContainer">
           {ideas.map(idea =>
