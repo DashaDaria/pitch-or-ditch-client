@@ -15,7 +15,7 @@ const WelcomeHeader = () => (
         around the events during and leading up to the San Diego Comic-Con 2018.</span>
       <p></p>
       <p>
-        <Button bsStyle="danger">Start Pitching</Button>
+        <Button bsStyle="danger" ><a className="link-color" href="/new">Start Pitching</a></Button>
       </p>
     </Jumbotron>
   </div>

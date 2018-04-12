@@ -24,9 +24,8 @@ class IdeasPage extends Component {
               downvoteIdea={downvoteIdea}
               deleteIdea={deleteIdea}/>
             )}
-              <TeamList />
         </div>
-      
+        <TeamList />
     </div>
     );
   }
