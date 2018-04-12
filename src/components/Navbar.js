@@ -14,7 +14,7 @@ const NavBar = () => {
         </Navbar.Header>
           <Nav>
             <NavItem eventKey={1} href="#">
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/">The Challenge</NavLink>
             </NavItem>
 
             <NavItem eventKey={2} href="#">

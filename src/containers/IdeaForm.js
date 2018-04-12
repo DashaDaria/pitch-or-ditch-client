@@ -4,7 +4,6 @@ import { FormGroup, ControlLabel, Button, FormControl } from 'react-bootstrap';
 import { updateIdeaForm } from '../actions/ideaForm';
 import { createIdea } from '../actions/ideas';
 
-
 class IdeaForm extends Component {
 
   handleOnChange = event => {

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import TeamList from './TeamList';
-
 import IdeaCard from '../components/IdeaCard';
 import { getIdeas, upvoteIdea, downvoteIdea, deleteIdea } from '../actions/ideas';
 import '../Ideas.css';
@@ -25,17 +24,16 @@ class IdeasPage extends Component {
               downvoteIdea={downvoteIdea}
               deleteIdea={deleteIdea}/>
             )}
+              <TeamList />
         </div>
-        <TeamList />
+      
     </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    ideas: state.ideas
-  }
+function mapStateToProps({ideas}) {
+  return { ideas };
 }
 
 
