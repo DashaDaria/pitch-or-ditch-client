@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-
+import Team from '../components/Team';
 import IdeaCard from '../components/IdeaCard';
 import { getIdeas, upvoteIdea, downvoteIdea, deleteIdea } from '../actions/ideas';
 import '../Ideas.css';
@@ -23,8 +23,9 @@ class IdeasPage extends Component {
               downvoteIdea={downvoteIdea}
               deleteIdea={deleteIdea}
             />
-          )}
-      </div>
+
+          )}>
+    </div>
     );
   }
 }

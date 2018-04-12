@@ -16,8 +16,6 @@ const IdeaCard = ({ idea, upvoteIdea, downvoteIdea, deleteIdea }) =>
       <Button className="add-margin" bsSize="small" bsStyle="primary" type="button" onClick={() => downvoteIdea(idea)}> - </Button>
       <Button className="add-margin" bsSize="small" bsStyle="default" type="button" onClick={() => deleteIdea(idea)}> x </Button>
 
-
-
     </div>
 
 export default IdeaCard;
