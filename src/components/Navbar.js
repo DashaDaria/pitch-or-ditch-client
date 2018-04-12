@@ -25,9 +25,6 @@ const NavBar = () => {
               <NavLink to="/new">Submit Idea</NavLink>
             </NavItem>
 
-            <NavItem eventKey={4} href="#">
-                <NavLink to="/team">Team</NavLink>
-            </NavItem>
           </Nav>
         </Navbar>
     </div>

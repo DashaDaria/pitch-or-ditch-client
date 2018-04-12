@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Team from '../components/Team';
 import TeamList from './TeamList';
 
 import IdeaCard from '../components/IdeaCard';
@@ -17,16 +16,17 @@ class IdeasPage extends Component {
   render() {
     const { ideas, upvoteIdea, downvoteIdea, deleteIdea } = this.props
     return (
+      <div>
         <div className="IdeasContainer">
           {ideas.map(idea =>
               <IdeaCard key={idea.id}
               idea={idea}
               upvoteIdea={upvoteIdea}
               downvoteIdea={downvoteIdea}
-              deleteIdea={deleteIdea}
-            />
-          )}
-          <TeamList />
+              deleteIdea={deleteIdea}/>
+            )}
+        </div>
+        <TeamList />
     </div>
     );
   }

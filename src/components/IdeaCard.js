@@ -4,10 +4,10 @@ import { Badge, Button } from 'react-bootstrap';
 
 const IdeaCard = ({ idea, upvoteIdea, downvoteIdea, deleteIdea }) =>
     <div className="IdeaCard" key={idea.id}>
-      <div className="votes">
-        <Badge>{idea.votes}</Badge>
-        <p>votes</p>
-      </div>
+        <div className="votes">
+          <Badge>{idea.votes}</Badge>
+          <p>votes</p>
+        </div>
       <h4>{idea.name} || <span className="category">{idea.category_name}</span></h4>
       <p className="content">{idea.content}</p>
       <p><small>Submitted by: @{idea.author}</small></p>
