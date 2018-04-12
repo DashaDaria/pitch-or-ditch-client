@@ -5,11 +5,11 @@ import PDlogo from '../PDlogo.png'
 
 const NavBar = () => {
   return (
-    <div style={{ borderBottom: '1px solid black'}}>
+    <div style={{ borderBottom: '1px solid grey'}}>
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#home">{PDlogo}</a>
+            <img src={PDlogo} className="App-logo" alt="logo" />
           </Navbar.Brand>
         </Navbar.Header>
           <Nav>

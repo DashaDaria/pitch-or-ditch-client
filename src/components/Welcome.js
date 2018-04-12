@@ -9,7 +9,11 @@ const WelcomeHeader = () => (
       <img src={PDlogo2} className="App-logo" alt="logo" />
       <h1>Pitch or Ditch</h1>
       <p className="App-title"> a virtual brainstorming session for your business</p>
-      <p>Goal: San Diego Comic-Con 2018</p>
+
+      <span className="challenge">
+        The challenge: create an integrated marketing campaign for our sponsors that centers <br/>
+        around the events during and leading up to the San Diego Comic-Con 2018.</span>
+      <p></p>
       <p>
         <Button bsStyle="danger">Start Pitching</Button>
       </p>
