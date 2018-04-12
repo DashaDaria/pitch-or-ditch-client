@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar, NavItem, Nav } from 'react-bootstrap';
+import PDlogo from '../PDlogo.png'
 
 const NavBar = () => {
   return (
@@ -8,7 +9,7 @@ const NavBar = () => {
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#home">P/D</a>
+            <a href="#home">{PDlogo}</a>
           </Navbar.Brand>
         </Navbar.Header>
           <Nav>
