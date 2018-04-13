@@ -35,7 +35,7 @@
 /* Idea Card */
 .IdeaCard {
   padding: 1%;
-  float: right;
+  float: left;
   margin: 1%;
   background: whitesmoke;
   height: 280px;
@@ -57,7 +57,7 @@
 /* Table */
 .table-card {
   padding: 2%;
-  float: right;
+  float: left;
   margin: 1%;
   background: whitesmoke;
   height: 582px;

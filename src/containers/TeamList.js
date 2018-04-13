@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Table } from 'react-bootstrap';
 import TeamListCard from '../components/TeamListCard';
 import '../Ideas.css';
 

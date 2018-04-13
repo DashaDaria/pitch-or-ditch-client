@@ -24,13 +24,13 @@ const addIdea = idea => {
 }
 
 export const createIdea = idea => {
-  return dispatch => {
+  return (dispatch) => {
     return fetch(`http://localhost:3001/api/categories/${idea.category_id}/ideas`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ idea: idea })
+      body: JSON.stringify({ idea })
     })
       .then(response => response.json())
       .then(idea => {
@@ -57,7 +57,7 @@ export const upvoteIdea = idea => {
         "Content-Type": "application/json"
       },
       credentials: 'same-origin',
-      body: JSON.stringify({ idea: idea })
+      body: JSON.stringify({ idea })
     })
       .then(response => response.json())
       .then(idea => {
@@ -82,7 +82,7 @@ export const downvoteIdea = idea => {
         "Content-Type": "application/json"
       },
       credentials: 'same-origin',
-      body: JSON.stringify({ idea: idea })
+      body: JSON.stringify({ idea })
     })
       .then(response => response.json())
       .then(idea => {

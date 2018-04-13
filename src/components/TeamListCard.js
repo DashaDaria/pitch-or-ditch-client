@@ -1,11 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const TeamListCard = ({idea}) =>
+class TeamListCard extends Component {
+  constructor(props){
+    super(props)
 
-  <tr key={idea.author}>
-    <td>{idea.author}</td>
-    <td>{idea.name}</td>
-  </tr>
+    this.state = {
+      counter: 0
+    }
+  }
+
+    handleChange = () => {
+      this.setState({
+        counter: this.state.counter + 1
+      })
+    }
+
+  render(){
+    return(
+      <tr>
+        <td>{this.props.idea.author}</td>
+        <td>{this.props.idea.name}</td>
+      </tr>
+    )
+  }
+}
 
 
 export default TeamListCard
+
+
+// <button onClick={this.handleChange}>
+//   +
+// </button> {this.state.counter}</td>

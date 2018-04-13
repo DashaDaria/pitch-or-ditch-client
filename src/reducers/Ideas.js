@@ -1,6 +1,4 @@
 export default (state = [], action) => {
-  let index;
-  let idea;
 
   switch(action.type) {
     case 'GET_IDEAS_SUCCESS':
@@ -13,26 +11,10 @@ export default (state = [], action) => {
       return state.filter(idea => idea.id !== action.ideaId);
 
     case 'UPVOTE_IDEA':
-      index = state.findIndex(idea => idea.id === action.ideaId);
-      idea = state[index];
-
-      return [
-        ...state.slice(0, index),
-        Object.assign({}, idea, { votes: idea.votes += 1 }),
-        ...state.slice(index + 1)
-      ];
+      return state.map(idea => idea.id === action.ideaId ? Object.assign({}, idea, {votes: idea.votes + 1}) : idea)
 
     case 'DOWNVOTE_IDEA':
-      index = state.findIndex(idea => idea.id === action.ideaId);
-      idea = state[index];
-      if (idea.votes > 0) {
-        return [
-          ...state.slice(0, index),
-          Object.assign({}, idea, { votes: idea.votes -= 1 }),
-          ...state.slice(index + 1)
-        ];
-      }
-      return state;
+    return state.map(idea => idea.id === action.ideaId ? Object.assign({}, idea, {votes: idea.votes - 1}) : idea)
 
     default:
       return state;

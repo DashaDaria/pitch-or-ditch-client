@@ -11,11 +11,12 @@ class IdeaForm extends Component {
     const currentIdeaForm =
       Object.assign({}, this.props.ideaForm, { [name]: value })
     this.props.updateIdeaForm(currentIdeaForm)
+
   }
 
   handleOnSubmit = event => {
     event.preventDefault()
-    const { createIdea, history } = this.props;
+    const {  createIdea, history } = this.props;
     createIdea(this.props.ideaForm);
     history.push('/ideas')
   }
