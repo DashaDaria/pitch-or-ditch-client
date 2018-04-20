@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { FormGroup, ControlLabel, Button, FormControl } from 'react-bootstrap';
 import { updateIdeaForm } from '../actions/ideaForm';
 import { createIdea } from '../actions/ideas';
+import { bindActionCreators } from 'redux';
 
 class IdeaForm extends Component {
 
@@ -11,7 +12,6 @@ class IdeaForm extends Component {
     const currentIdeaForm =
       Object.assign({}, this.props.ideaForm, { [name]: value })
     this.props.updateIdeaForm(currentIdeaForm)
-
   }
 
   handleOnSubmit = event => {
@@ -92,4 +92,8 @@ const mapStateToProps = state => {
   }
 }
 
- export default connect(mapStateToProps, { updateIdeaForm, createIdea })(IdeaForm);
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({updateIdeaForm, createIdea}, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(IdeaForm);
